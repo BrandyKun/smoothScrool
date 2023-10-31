@@ -1,6 +1,7 @@
 'use client'
 import styles from './page.module.css'
 import { useEffect } from 'react'
+import Intro from './components/Intro'
 
 export default function Home() {
 
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        <div ></div>
+        <Intro  />
         <div ></div>
         <div ></div>
 
