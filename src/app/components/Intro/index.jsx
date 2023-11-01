@@ -2,9 +2,12 @@ import styles from "./style.module.css";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap//ScrollTrigger";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 const Index = () => {
+
+  const backgroundImage = useRef(null);
+  const introImage = useRef(null);
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -14,8 +17,12 @@ const Index = () => {
         start: 0,
         end: "+=500px",
         scrub: true,
+        markers: true
       },
-    });
+    })
+
+    timeLine
+      .from(backgroundImage.current, {clipPath:"inset(15%)"})
   }, []);
   return (
     <div className={styles.intro}>
