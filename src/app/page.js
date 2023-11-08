@@ -5,22 +5,18 @@ import Intro from './components/Intro'
 
 export default function Home() {
 
-  useEffect(() => {
+  useEffect( () => {
     (
       async () => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
-        const locomotiveScroll = new LocomotiveScroll();
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+          const locomotiveScroll = new LocomotiveScroll();
       }
-    )
-
-  }, []);
+    )()
+  }, [])
   return (
     <>
       <main className={styles.main}>
         <Intro  />
-        <div ></div>
-        <div ></div>
-
       </main>
     </>
   )
